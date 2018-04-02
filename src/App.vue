@@ -1,21 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <img src="./assets/logo.svg">
+
+    <input type="text" placeholder="... Поиск">
+    
   </div>
 </template>
 
@@ -24,37 +12,56 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App MAZA'
     }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+$blue: #1DA1F2; //#1b95e0;
+
+body {
+  //background-image: linear-gradient(135deg,#1da1f2,#981ceb);
+  background-color: $blue;
+  font: calc(1vw + 1vh + 0.5vmin)/1.5 sans-serif;
+  color: rgba(0,0,0,0.7);
 }
 
-a {
-  color: #42b983;
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+img {
+  width: 33vh;
+}
+
+input {
+  //margin: auto;
+  
+  font: inherit;
+  line-height: 1;
+  font-size: 2em;
+  padding: .5em 1em;
+
+  border: 0;
+  outline: 0;
+  box-shadow: 1rem 1rem cyan, 0 1rem 7rem -2rem #000 
+}
+
+::placeholder {
+  color: #9c27b0;
+  opacity: .7;
 }
 </style>
