@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+//const autoprefixer = require('autoprefixer')
 
 module.exports = {
   entry: './src/main.js',
@@ -37,6 +38,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
+          postcss: [require('autoprefixer')()],
           loaders: {
             // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
             // the "scss" and "sass" values for the lang attribute to the right configs here.
@@ -44,6 +46,14 @@ module.exports = {
             'scss': [
               'vue-style-loader',
               'css-loader',
+              // {
+              //   loader: 'postcss-loader',
+              //   options: {
+              //       plugins: [
+              //           autoprefixer()
+              //       ]
+              //   }
+              // },
               'sass-loader'
             ],
             'sass': [
