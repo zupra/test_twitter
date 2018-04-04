@@ -1,12 +1,28 @@
 # test_twitter
 
-> A Vue.js project
+> twitter search
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install or yarn
+
+# build App
+npm run build
+
+# START App at localhost:3080
+npm run start OR nodemon server
+```
+
+## Dev Setup
+
+``` bash
+# install dependencies
+npm install or yarn
+
+# serve express at localhost:8080
+npm run start
 
 # serve with hot reload at localhost:8080
 npm run dev

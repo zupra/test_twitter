@@ -27,14 +27,13 @@ app.use( (req, res, next) => {
 
 
 app.get('/', (req, res) => res.sendfile('index.html',{ root : __dirname}) );
-
-
-app.get('/search/:hashtag', (req, res) => {
-  client.get('search/tweets', { q: req.params.hashtag, count: 20 }, (error,tweets,response) => {
+app.get('/search_json/:hashtag', (req, res) => {
+  client.get('search/tweets', { q: req.params.hashtag, count: 50 }, (error,tweets,response) => {
     if (error) console.error(error)
     res.json(tweets)
   })
 });
+app.get('*', (req, res) => res.sendfile('index.html',{ root : __dirname}) );
 
 
 app.listen(port, () => console.log( 'Server started at http://localhost:', port ) );
